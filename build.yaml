@@ -20,6 +20,6 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: waterfowl_left
+    shield: pentangeli_left
   - board: nice_nano_v2
-    shield: waterfowl_right
+    shield: pentangeli_right
