@@ -5,9 +5,9 @@ Configuration for Pentangeli, a 38 key hand-wired keyboard with integrated track
 
 ### TODO
 
-- [ ] Remove encoder support
+- [x] Remove encoder support
 - [ ] Adapt pinout for 38 key keyboard
-- [ ] Add sensor driver: https://github.com/inorichi/zmk-pmw3610-driver and [configure pointing device](https://zmk.dev/docs/development/hardware-integration/pointing)
+- [ ] Add [sensor driver](https://github.com/inorichi/zmk-pmw3610-driver) and [configure pointing device](https://zmk.dev/docs/development/hardware-integration/pointing)
 - [ ] Update keymap to the same as QMK, but with BT keys on macro layer
 - [ ] Potentially add build guide
 
