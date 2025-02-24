@@ -37,49 +37,6 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4)                                 RC(3,5) 
             ;
     };
 
-    roller_left_encoder: encoder_left_roller {
-        compatible = "alps,ec11";
-        a-gpios = <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <80>;
-        status = "disabled";
-    };
-
-    dial_left_encoder: encoder_left_dial {
-        compatible = "alps,ec11";
-        a-gpios = <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <80>;
-        status = "disabled";
-    };
-
-    roller_right_encoder: encoder_right_roller {
-        compatible = "alps,ec11";
-        a-gpios = <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <80>;
-        status = "disabled";
-    };
-
-    dial_right_encoder: encoder_right_dial {
-        compatible = "alps,ec11";
-        a-gpios = <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <80>;
-        status = "disabled";
-    };
-
-    sensors: sensors {
-        compatible = "zmk,keymap-sensors";
-        triggers-per-rotation = <20>;
-        sensors = <
-            &roller_left_encoder
-            &dial_left_encoder
-            &dial_right_encoder
-            &roller_right_encoder
-        >;
-    };
-
 };
 
 &pro_micro_i2c {
