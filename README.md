@@ -15,3 +15,5 @@ Configuration for Pentangeli, a 38 key hand-wired keyboard with integrated track
 - [New shield ZMK documentation](https://zmk.dev/docs/development/hardware-integration/new-shield)
 - [Waterfowl shield configuration used as starting point](https://github.com/zmkfirmware/zmk/tree/main/app/boards/shields/waterfowl)
 - [Frankie Pentangeli](https://m.imdb.com/title/tt0071562/characters/nm0311155/)
+
+- [pmw3610 Pinout reddit](https://www.reddit.com/r/ErgoMechKeyboards/comments/1h0zy8n/help_which_nicenane_pins_to_connect_to_this/#lightbox)
