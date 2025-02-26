@@ -37,3 +37,7 @@ SCL  = D16 / P0.10
 MOSI = D10 / P0.09
 
 ```
+
+## Wiring diagram
+
+![wiring diagram](./pentangeli-wiring-wireless.png)
