@@ -10,26 +10,53 @@
         compatible = "zmk,keymap";
 
         default_layer {
-/* QWERTY
+/* COLEMAK DH
  *
  * ,----------------------------------.                      ,----------------------------------.
- * |   Q  |   W  |   E  |   R  |   T  |                      |   Y  |   U  |   I  |   O  |   P  |
+ * |   Q  |   W  |   F  |   P  |   B  |                      |   J  |   L  |   U  |   Y  |   '  |
  * |------+------+------+------+------|                      |------+------+------+------+------|
- * |   A  |   S  |   D  |   F  |   G  |                      |   H  |   J  |   K  |   L  |   ;  |
+ * |   A  |   R  |   S  |   T  |   G  |                      |   M  |   N  |   E  |   I  |   O  |
  * |------+------+------+------+------|                      |------+------+------+------+------|
- * |   Z  |   X  |   C  |   V  |   B  |                      |   N  |   M  |   ,  |   .  |   /  |
+ * |   Z  |   X  |   C  |   D  |   V  |                      |   K  |   H  |   ,  |   .  |   /  |
  * `----------------------------------'                      `----------------------------------'
- *                  ,-----------------------.            ,-----------------------.
- *                  |  1  |  2  |  3  |  4  |            |  1  |  2  |  3  |  4  |
- *                  `-----------------------'            `-----------------------'
+ *            ,-----------------------.                      ,-----------------------.
+ *            |  1  |  2  |  3  |  4  |                      |  5  |  6  |  7  |  8  |
+ *            `-----------------------'                      `-----------------------'
  */
             bindings = <
-    &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y   &kp U       &kp I       &kp O       &kp P
-    &kp A       &kp S       &kp D       &kp F       &kp G           &kp H   &kp J       &kp K       &kp L       &kp SEMI
-    &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N   &kp M       &kp COMMA   &kp DOT     &kp FSLH
+    &kp Q       &kp W       &kp P       &kp B       &kp J           &kp L   &kp L       &kp Y       &kp Y       &kp SQT
+    &kp A       &kp R       &kp T       &kp G       &kp M           &kp M   &kp N       &kp I       &kp I       &kp O
+    &kp Z       &kp X       &kp D       &kp V       &kp V           &kp K   &kp H       &kp COMMA   &kp DOT     &kp FSLH
                 &kp N1      &kp N2      &kp N3      &lt WIN N4      &kp N5  &kp N6      &kp N7      &lt WIN N8
             >;
         };
+
+        sym_layer {
+            bindings = <
+    &kp EXCL    &kp AT    &kp LBRC &kp RBRC &kp PIPE        &kp AMPS  &kp ASTRK &kp LT    &kp GT    &kp SQT
+    &kp HASH    &kp DLLR  &kp LPAR &kp RPAR &kp GRAVE       &kp MINUS &kp EQUAL &kp PLUS  &kp UNDER &kp SEMI
+    &kp PRCNT   &kp CARET &kp LBKT &kp RBKT &kp TILDE       &kp BSLH  &kp COLON &kp COMMA &kp DOT   &kp FSLH
+                &trans    &trans   &trans   &trans          &trans    &trans    &trans    &trans
+          >;
+      };
+
+        nav_layer {
+            bindings = <
+    &none     &none     &none     &none     &none         &none           &kp PG_UP &kp UP   &none     &kp INS
+    &kp LCTRL &kp LALT  &kp LGUI  &kp LSHFT &none         &kp HOME        &kp LEFT  &kp DOWN &kp RIGHT &kp END
+    &kp LG(Z) &kp LG(X) &kp LG(C) &kp K_APP &kp LG(V)     &kp LS(LC(TAB)) &kp PG_DN &none    &none     &kp LC(TAB)
+              &trans    &trans    &trans    &kp DEL       &trans          &kp TAB   &trans   &trans
+          >;
+      };
+
+        num_layer {
+            bindings = <
+    &kp F1    &kp F2    &kp F3    &kp F4    &none         &none     &kp N7    &kp N8    &kp N9    &kp N0
+    &kp F5    &kp F6    &kp F7    &kp F8    &none         &none     &kp N4    &kp N5    &kp N6    &none
+    &kp F9    &kp F10   &kp F11   &kp F12   &none         &none     &kp N1    &kp N2    &kp N3    &none
+              &trans    &trans    &trans    &trans        &none     &kp N0    &none     &none
+          >;
+      };
 
         win_layer {
             bindings = <
