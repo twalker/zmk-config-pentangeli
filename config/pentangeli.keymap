@@ -2,6 +2,9 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define DEFAULT 0
+#define WIN     1
+
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -24,16 +27,16 @@
     &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y   &kp U       &kp I       &kp O       &kp P
     &kp A       &kp S       &kp D       &kp F       &kp G           &kp H   &kp J       &kp K       &kp L       &kp SEMI
     &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N   &kp M       &kp COMMA   &kp DOT     &kp FSLH
-                &kp N1      &kp N2      &kp N3      &kp N4          &kp N5  &kp N6      &kp N7      &kp N8
+                &kp N1      &kp N2      &kp N3      &lt WIN N4      &kp N5  &kp N6      &kp N7      &lt WIN N8
             >;
         };
 
         win_layer {
             bindings = <
-    &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y   &kp U       &kp I       &kp O       &kp P
-    &kp A       &kp S       &kp D       &kp F       &kp G           &kp H   &kp J       &kp K       &kp L       &kp SEMI
-    &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N   &kp M       &kp COMMA   &kp DOT     &kp FSLH
-                &kp N1      &kp N2      &kp N3      &kp N4          &kp N5  &kp N6      &kp N7      &kp N8
+    &bootloader &none &kp C_VOL_UP &none &bt BT_SEL 0               &bootloader &kp LG(EQUAL) &kp LC(LA(UP)) &kp LC(LA(EQUAL)) &none
+    &bt BT_CLR &kp C_PREV &kp C_PP &kp C_NEXT &bt BT_SEL 1          &kp LS(LG(N5)) &kp LC(LA(LEFT)) &kp LC(LA(DOWN)) &kp LC(LA(RIGHT)) &kp LC(LA(RET))
+    &none &none &none &kp C_VOL_DN &kp C_MUTE &bt BT_SEL 2          &none &kp LG(MINUS) &none &kp LC(LA(MINUS)) &none &none
+          &trans &trans &trans &trans                               &trans &trans &trans &trans
             >;
         };
     };
