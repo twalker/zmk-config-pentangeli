@@ -9,7 +9,7 @@ Configuration for Pentangeli, a 38 key hand-wired keyboard with integrated track
 - [x] Adapt pinout for cols and rows
 - [x] Adjust key matrix for 38 keys
 - [x] Add [sensor driver](https://github.com/inorichi/zmk-pmw3610-driver) and [configure pointing device](https://zmk.dev/docs/development/hardware-integration/pointing)
-- [ ] Add nice!view adapter and enable
+- [x] Add nice!view adapter and enable
 - [ ] Update keymap to the same as QMK, but with BT keys on macro layer
 - [ ] Potentially add build guide
 
@@ -27,9 +27,9 @@ Configuration for Pentangeli, a 38 key hand-wired keyboard with integrated track
 
 Default Nice!View pinout:
 ```
-CS   = D1 / P0.06
-SCL  = D2 / 0.17
-MOSI = D3 / P0.20
+CS   = P0.06 / D1
+SCL  = P0.17 / D2
+MOSI = P0.20 / D3
 ```
 
 Custom pinout:
