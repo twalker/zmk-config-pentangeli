@@ -7,9 +7,9 @@ Configuration for Pentangeli, a 38 key hand-wired keyboard with integrated track
 
 - [x] Remove encoder support
 - [x] Adapt pinout for cols and rows
+- [x] Adjust key matrix for 38 keys
 - [x] Add [sensor driver](https://github.com/inorichi/zmk-pmw3610-driver) and [configure pointing device](https://zmk.dev/docs/development/hardware-integration/pointing)
-- [ ] Adjust key matrix for 38 keys
-- [ ] Add nice!view adapter and enable
+- [x] Add nice!view adapter and enable
 - [ ] Update keymap to the same as QMK, but with BT keys on macro layer
 - [ ] Potentially add build guide
 
@@ -23,11 +23,13 @@ Configuration for Pentangeli, a 38 key hand-wired keyboard with integrated track
 - [zmk-pmw3610-driver](https://github.com/inorichi/zmk-pmw3610-driver)
 
 
+### pinout for display and sensor
+
 Default Nice!View pinout:
 ```
-CS = D1 / P0.06
-SCL = D2 / 0.17
-MOSI = D3 / P0.20
+CS   = P0.06 / D1
+SCL  = P0.17 / D2
+MOSI = P0.20 / D3
 ```
 
 Custom pinout:
@@ -35,8 +37,27 @@ Custom pinout:
 CS   = D14 / P1.11
 SCL  = D16 / P0.10
 MOSI = D10 / P0.09
+```
+
+Best guess pmw3610 pinout:
+```
+SDIO (moso/miso) = P0.17
+SCLK (sck)       = P0.08
+nCS (gpios)      = P0.20
+Mot (irq)        = P0.06
 
 ```
+
+
+Moved pmw3610 pinout to accomodate display:
+```
+
+SDIO (moso/miso) = P0.22 / D4
+SCLK (sck)       = P0.24 / D5
+nCS (gpios)      = P1.00 / D6
+Mot (irq)        = P0.11 / D7
+```
+
 
 ## Wiring diagram
 
