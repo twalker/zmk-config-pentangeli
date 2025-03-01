@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define DEFAULT 0
 #define SYM     1
@@ -10,7 +11,52 @@
 #define WIN     4
 #define MSE     5
 
+&lt {
+  quick_tap_ms = <200>;
+};
+
 / {
+
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        hs: homerow_mods_slow {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_SLOW";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        hf: homerow_mods_fast {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_FAST";
+            #binding-cells = <2>;
+            tapping-term-ms = <110>;
+            quick-tap-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        combo_capsword {
+              timeout-ms = <50>;
+              key-positions = <13 16>;
+              bindings = <&caps_word>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -25,14 +71,14 @@
  * |   Z  |   X  |   C  |   D  |   V  |                      |   K  |   H  |   ,  |   .  |   /  |
  * `----------------------------------'                      `----------------------------------'
  *            ,-----------------------.                      ,-----------------------.
- *            |  1  |  2  |  3  |  4  |                      |  5  |  6  |  7  |  8  |
+ *            | NUM | SYM | NAV | MSE |                      | ESC | NAV | MSE | WIN |
  *            `-----------------------'                      `-----------------------'
  */
             bindings = <
     &kp Q       &kp W       &kp P       &kp B       &kp J           &kp L   &kp L       &kp Y       &kp Y       &kp SQT
-    &kp A       &kp R       &kp T       &kp G       &kp M           &kp M   &kp N       &kp I       &kp I       &kp O
+    &hm LCTRL A &hs LALT R  &hm LGUI S  &hf LSHFT T &kp G           &kp M   &hf RSHFT N &hm RGUI E  &hs LALT I  &hm RCTRL O
     &kp Z       &kp X       &kp D       &kp V       &kp V           &kp K   &kp H       &kp COMMA   &kp DOT     &kp FSLH
-                &kp N1      &kp N2      &kp N3      &lt WIN N4      &kp N5  &kp N6      &kp N7      &lt WIN N8
+                &mo NUM     &lt SYM ESC &lt NAV BSPC &mo MSE        &kp ESC &lt NAV SPACE &lt MSE ENTER &mo WIN
             >;
         };
 
@@ -66,11 +112,11 @@
         win_layer {
             bindings = <
     &bootloader &none &kp C_VOL_UP &none &bt BT_SEL 0               &bootloader &kp LG(EQUAL) &kp LC(LA(UP)) &kp LC(LA(EQUAL)) &none
-    &bt BT_CLR &kp C_PREV &kp C_PP &kp C_NEXT &bt BT_SEL 1          &kp LS(LG(N5)) &kp LC(LA(LEFT)) &kp LC(LA(DOWN)) &kp LC(LA(RIGHT)) &kp LC(LA(RET))
-    &none &none &none &kp C_VOL_DN &kp C_MUTE &bt BT_SEL 2          &none &kp LG(MINUS) &none &kp LC(LA(MINUS)) &none &none
+    &bt BT_CLR  &kp C_PREV &kp C_PP &kp C_NEXT &bt BT_SEL 1          &kp LS(LG(N5)) &kp LC(LA(LEFT)) &kp LC(LA(DOWN)) &kp LC(LA(RIGHT)) &kp LC(LA(RET))
+    &out OUT_TOG &none &none &kp C_VOL_DN &kp C_MUTE &bt BT_SEL 2          &none &kp LG(MINUS) &none &kp LC(LA(MINUS)) &none &none
           &trans &trans &trans &trans                               &trans &trans &trans &trans
            >;
-        };
+      };
 
         mse_layer {
             bindings = <
