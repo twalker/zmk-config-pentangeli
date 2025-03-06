@@ -55,12 +55,10 @@
     };
 };
 
-#include <dt-bindings/zmk/input_transform.h>
-
 / {
   trackball_listener {
     compatible = "zmk,input-listener";
     device = <&trackball>;
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
   };
+
 };
