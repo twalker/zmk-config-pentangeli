@@ -12,7 +12,7 @@
 
 
 // Trackball
-// https://github.com/inorichi/zmk-pmw3610-driver/tree/main
+// https://github.com/badjeff/zmk-pmw3610-driver
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
@@ -32,6 +32,8 @@
     };
 };
 
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
 &spi0 {
     status = "okay";
     compatible = "nordic,nrf-spim";
@@ -46,11 +48,10 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-
-        /*   optional features   */
-        // snipe-layers = <1>;
-        // scroll-layers = <2 3>;
-        // automouse-layer = <4>;
+        cpi = <600>;
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
     };
 };
 
