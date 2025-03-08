@@ -96,7 +96,7 @@
     &none     &none     &none     &none     &none         &none           &kp PG_UP &kp UP   &none     &kp INS
     &kp LCTRL &kp LALT  &kp LGUI  &kp LSHFT &none         &kp HOME        &kp LEFT  &kp DOWN &kp RIGHT &kp END
     &kp LG(Z) &kp LG(X) &kp LG(C) &kp K_APP &kp LG(V)     &kp LS(LC(TAB)) &kp PG_DN &none    &none     &kp LC(TAB)
-              &trans    &trans    &kp DEL   &trans        &trans          &trans    &kp TAB   &trans
+              &trans    &trans    &kp DEL   &trans        &trans          &kp TAB   &trans   &trans
             >;
       };
 
