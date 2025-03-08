@@ -96,7 +96,7 @@
     &none     &none     &none     &none     &none         &none           &kp PG_UP &kp UP   &none     &kp INS
     &kp LCTRL &kp LALT  &kp LGUI  &kp LSHFT &none         &kp HOME        &kp LEFT  &kp DOWN &kp RIGHT &kp END
     &kp LG(Z) &kp LG(X) &kp LG(C) &kp K_APP &kp LG(V)     &kp LS(LC(TAB)) &kp PG_DN &none    &none     &kp LC(TAB)
-              &trans    &trans    &kp DEL   &trans        &trans          &trans    &kp TAB   &trans
+              &trans    &trans    &kp DEL   &trans        &trans          &kp TAB   &trans   &trans
             >;
       };
 
@@ -111,10 +111,10 @@
 
         win_layer {
             bindings = <
-    &bootloader &none &kp C_VOL_UP &none &bt BT_SEL 0               &bootloader &kp LG(EQUAL) &kp LC(LA(UP)) &kp LC(LA(EQUAL)) &none
-    &bt BT_CLR  &kp C_PREV &kp C_PP &kp C_NEXT &bt BT_SEL 1          &kp LS(LG(N5)) &kp LC(LA(LEFT)) &kp LC(LA(DOWN)) &kp LC(LA(RIGHT)) &kp LC(LA(RET))
-    &out OUT_TOG &none &none &kp C_VOL_DN &kp C_MUTE &bt BT_SEL 2          &none &kp LG(MINUS) &none &kp LC(LA(MINUS)) &none &none
-          &trans &trans &trans &trans                               &trans &trans &trans &trans
+    &bt BT_CLR &none &kp C_VOL_UP &none &bt BT_SEL 0              &none  &kp LG(EQUAL) &kp LC(LA(UP)) &kp LC(LA(EQUAL)) &none
+    &out OUT_TOG  &kp C_PREV &kp C_PP &kp C_NEXT &bt BT_SEL 1     &kp LS(LG( N5)) &kp LC(LA(LEFT)) &kp LC(LA(DOWN)) &kp LC(LA(RIGHT)) &kp LC(LA(RET))
+    &none &none &kp C_VOL_DN &kp C_MUTE &bt BT_SEL 2              &none &kp LG(MINUS) &none &kp LC(LA(MINUS)) &none &none
+          &trans &trans &trans &bootloader                               &bootloader &trans &trans &trans
            >;
       };
 
