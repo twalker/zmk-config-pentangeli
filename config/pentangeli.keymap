@@ -83,14 +83,14 @@
  * |   Z  |   X  |   C  |   D  |   V  |                      |   K  |   H  |   ,  |   .  |   /  |
  * `----------------------------------'                      `----------------------------------'
  *            ,-----------------------.                      ,-----------------------.
- *            | NUM | SYM | NAV | MSE |                      | ESC | NAV | MSE | WIN |
+ *            | NUM | SYM | NAV | MSE |                      | ESC | NAV | VIM | WIN |
  *            `-----------------------'                      `-----------------------'
  */
             bindings = <
     &kp Q       &kp W       &kp F       &kp P       &kp B           &kp J   &kp L       &kp U       &kp Y       &kp SQT
     &hm LCTRL A &hs LALT R  &hm LGUI S  &hf LSHFT T &kp G           &kp M   &hf RSHFT N &hm RGUI E  &hs LALT I  &hm RCTRL O
     &kp Z       &kp X       &kp C       &kp D       &kp V           &kp K   &kp H       &kp COMMA   &kp DOT     &kp FSLH
-                &mo NUM     &lt SYM ESC &lt NAV BSPC &mo MSE        &kp ESC &lt NAV SPACE &lt MSE ENTER &mo WIN
+                &mo NUM     &lt SYM ESC &lt NAV BSPC &mo MSE        &kp ESC &lt NAV SPACE &lt VIM ENTER &mo WIN
             >;
         };
 
@@ -136,6 +136,14 @@
     &trans  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans       &msc SCRL_LEFT  &mkp MB1        &mkp MB3  &mkp MB2 &msc SCRL_RIGHT
     &trans  &trans         &trans         &trans          &trans       &trans          &msc SCRL_DOWN  &trans    &trans   &trans
             &trans         &kp LCTL       &kp LSFT        &trans       &trans          &kp LSFT        &kp LGUI  &trans
+            >;
+      };
+        vim_layer {
+            bindings = <
+    &trans  &trans         &trans         &trans          &trans       &trans          &trans          &trans    &trans   &trans
+    &trans  &trans         &trans         &trans          &trans       &trans          &trans          &trans    &trans   &trans
+    &trans  &trans         &trans         &trans          &trans       &trans          &trans          &trans    &trans   &trans
+            &trans         &trans         &trans          &trans       &trans          &trans          &trans    &trans
             >;
       };
     };
