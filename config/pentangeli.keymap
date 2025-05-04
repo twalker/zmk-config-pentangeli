@@ -174,7 +174,7 @@
             bindings = <
     &trans  &trans         &trans         &trans          &trans       &trans          &trans        &vim_w_u  &trans     &trans
     &trans  &trans         &trans         &trans          &trans       &trans          &vim_w_l      &vim_w_d  &vim_w_r   &trans
-    &trans  &trans         &trans         &trans          &trans       &trans          &trans        &trans    &trans     &trans
+    &trans  &trans         &trans         &trans          &trans       &kp LS(H)       &trans        &trans    &trans     &kp LS(L)
             &trans         &trans         &trans          &trans       &trans          &trans        &trans    &trans
             >;
       };
