@@ -172,10 +172,10 @@
       };
         vim_layer {
             bindings = <
-    &trans  &trans         &trans         &trans          &trans       &trans          &trans          <&vim_w_u> &trans     &trans
-    &trans  &trans         &trans         &trans          &trans       &trans          <&vim_w_l>      <&vim_w_d> <&vim_w_r> &trans
-    &trans  &trans         &trans         &trans          &trans       &trans          &trans          &trans     &trans     &trans
-            &trans         &trans         &trans          &trans       &trans          &trans          &trans     &trans
+    &trans  &trans         &trans         &trans          &trans       &trans          &trans        &vim_w_u  &trans     &trans
+    &trans  &trans         &trans         &trans          &trans       &trans          &vim_w_l      &vim_w_d  &vim_w_r   &trans
+    &trans  &trans         &trans         &trans          &trans       &trans          &trans        &trans    &trans     &trans
+            &trans         &trans         &trans          &trans       &trans          &trans        &trans    &trans
             >;
       };
     };
