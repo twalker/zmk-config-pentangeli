@@ -10,6 +10,7 @@
 #define NUM     3
 #define WIN     4
 #define MSE     5
+#define VIM     6
 
 &lt {
   quick_tap_ms = <200>;
