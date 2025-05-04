@@ -48,13 +48,44 @@
     };
 
     macros {
-        zed_em_kay: zed_em_kay {
+        vim_w_l: vim_w_l {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp LSHFT>
-                , <&macro_tap &kp Z &kp M &kp K>
-                , <&macro_release &kp LSHFT>
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp W>
+                , <&macro_release &kp LCTRL>
+                , <&macro_tap &kp H>
+                ;
+        };
+        vim_w_d: vim_w_d {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp W>
+                , <&macro_release &kp LCTRL>
+                , <&macro_tap &kp J>
+                ;
+        };
+        vim_w_u: vim_w_u {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp W>
+                , <&macro_release &kp LCTRL>
+                , <&macro_tap &kp K>
+                ;
+        };
+        vim_w_r: vim_w_r {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp W>
+                , <&macro_release &kp LCTRL>
+                , <&macro_tap &kp L>
                 ;
         };
     };
@@ -140,10 +171,10 @@
       };
         vim_layer {
             bindings = <
-    &trans  &trans         &trans         &trans          &trans       &trans          &trans          &trans    &trans   &trans
-    &trans  &trans         &trans         &trans          &trans       &trans          &trans          &trans    &trans   &trans
-    &trans  &trans         &trans         &trans          &trans       &trans          &trans          &trans    &trans   &trans
-            &trans         &trans         &trans          &trans       &trans          &trans          &trans    &trans
+    &trans  &trans         &trans         &trans          &trans       &trans          &trans          <&vim_w_u> &trans     &trans
+    &trans  &trans         &trans         &trans          &trans       &trans          <&vim_w_l>      <&vim_w_d> <&vim_w_r> &trans
+    &trans  &trans         &trans         &trans          &trans       &trans          &trans          &trans     &trans     &trans
+            &trans         &trans         &trans          &trans       &trans          &trans          &trans     &trans
             >;
       };
     };
