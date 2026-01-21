@@ -122,7 +122,7 @@
     &kp Q       &kp W       &kp F       &kp P       &kp B           &kp J   &kp L       &kp U       &kp Y       &kp SQT
     &hm LCTRL A &hs LALT R  &hm LGUI S  &hf LSHFT T &kp G           &kp M   &hf RSHFT N &hm RGUI E  &hs LALT I  &hm RCTRL O
     &kp Z       &kp X       &kp C       &kp D       &kp V           &kp K   &kp H       &kp COMMA   &kp DOT     &kp FSLH
-                &mo NUM     &lt SYM ESC &lt NAV BSPC &mo MSE        &kp ESC &lt NAV SPACE &lt VIM ENTER &mo WIN
+                &mo NUM     &mo SYM     &lt NAV BSPC &mo MSE        &kp ESC &lt NAV SPACE &lt VIM ENTER &mo WIN
             >;
         };
 
@@ -139,7 +139,7 @@
             bindings = <
     &none     &none     &none     &none     &none         &none           &kp PG_UP &kp UP   &none     &kp INS
     &kp LCTRL &kp LALT  &kp LGUI  &kp LSHFT &none         &kp HOME        &kp LEFT  &kp DOWN &kp RIGHT &kp END
-    &kp LG(Z) &kp LG(X) &kp LG(C) &kp K_APP &kp LG(V)     &kp LS(LC(TAB)) &kp PG_DN &none    &none     &kp LC(TAB)
+    &kp LG(Z) &kp LG(X) &kp LG(C) &kp K_APP &kp LG(V)     &kp LG(LS(LBKT)) &kp PG_DN &none   &none     &kp LG(LS(RBKT))
               &trans    &trans    &kp DEL   &trans        &trans          &kp TAB   &trans   &trans
             >;
       };
