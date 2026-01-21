@@ -10,6 +10,7 @@
 #define NUM     3
 #define WIN     4
 #define MSE     5
+#define VIM     6
 
 &lt {
   quick_tap_ms = <200>;
@@ -47,6 +48,49 @@
         };
     };
 
+    macros {
+        vim_w_l: vim_w_l {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp W>
+                , <&macro_release &kp LCTRL>
+                , <&macro_tap &kp H>
+                ;
+        };
+        vim_w_d: vim_w_d {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp W>
+                , <&macro_release &kp LCTRL>
+                , <&macro_tap &kp J>
+                ;
+        };
+        vim_w_u: vim_w_u {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp W>
+                , <&macro_release &kp LCTRL>
+                , <&macro_tap &kp K>
+                ;
+        };
+        vim_w_r: vim_w_r {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp W>
+                , <&macro_release &kp LCTRL>
+                , <&macro_tap &kp L>
+                ;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -71,14 +115,14 @@
  * |   Z  |   X  |   C  |   D  |   V  |                      |   K  |   H  |   ,  |   .  |   /  |
  * `----------------------------------'                      `----------------------------------'
  *            ,-----------------------.                      ,-----------------------.
- *            | NUM | SYM | NAV | MSE |                      | ESC | NAV | MSE | WIN |
+ *            | NUM | SYM | NAV | MSE |                      | ESC | NAV | VIM | WIN |
  *            `-----------------------'                      `-----------------------'
  */
             bindings = <
     &kp Q       &kp W       &kp F       &kp P       &kp B           &kp J   &kp L       &kp U       &kp Y       &kp SQT
     &hm LCTRL A &hs LALT R  &hm LGUI S  &hf LSHFT T &kp G           &kp M   &hf RSHFT N &hm RGUI E  &hs LALT I  &hm RCTRL O
     &kp Z       &kp X       &kp C       &kp D       &kp V           &kp K   &kp H       &kp COMMA   &kp DOT     &kp FSLH
-                &mo NUM     &lt SYM ESC &lt NAV BSPC &mo MSE        &kp ESC &lt NAV SPACE &lt MSE ENTER &mo WIN
+                &mo NUM     &mo SYM     &lt NAV BSPC &mo MSE        &kp ESC &lt NAV SPACE &lt VIM ENTER &mo WIN
             >;
         };
 
@@ -95,7 +139,7 @@
             bindings = <
     &none     &none     &none     &none     &none         &none           &kp PG_UP &kp UP   &none     &kp INS
     &kp LCTRL &kp LALT  &kp LGUI  &kp LSHFT &none         &kp HOME        &kp LEFT  &kp DOWN &kp RIGHT &kp END
-    &kp LG(Z) &kp LG(X) &kp LG(C) &kp K_APP &kp LG(V)     &kp LS(LC(TAB)) &kp PG_DN &none    &none     &kp LC(TAB)
+    &kp LG(Z) &kp LG(X) &kp LG(C) &kp K_APP &kp LG(V)     &kp LG(LS(LBKT)) &kp PG_DN &none   &none     &kp LG(LS(RBKT))
               &trans    &trans    &kp DEL   &trans        &trans          &kp TAB   &trans   &trans
             >;
       };
@@ -124,6 +168,14 @@
     &trans  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans       &msc SCRL_LEFT  &mkp MB1        &mkp MB3  &mkp MB2 &msc SCRL_RIGHT
     &trans  &trans         &trans         &trans          &trans       &trans          &msc SCRL_DOWN  &trans    &trans   &trans
             &trans         &kp LCTL       &kp LSFT        &trans       &trans          &kp LSFT        &kp LGUI  &trans
+            >;
+      };
+        vim_layer {
+            bindings = <
+    &trans  &trans         &trans         &trans          &trans       &trans          &trans        &vim_w_u  &trans     &trans
+    &trans  &trans         &trans         &trans          &trans       &trans          &vim_w_l      &vim_w_d  &vim_w_r   &trans
+    &trans  &trans         &trans         &trans          &trans       &kp LS(H)       &trans        &trans    &trans     &kp LS(L)
+            &trans         &trans         &trans          &trans       &trans          &trans        &trans    &trans
             >;
       };
     };
